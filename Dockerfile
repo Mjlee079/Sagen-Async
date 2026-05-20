@@ -19,4 +19,4 @@ COPY . .
 EXPOSE 8000
 
 # Run with gunicorn
-CMD gunicorn --bind 0.0.0.0:$PORT 'app:create_app()'
+CMD gunicorn --bind "0.0.0.0:${PORT:-8000}" 'app:create_app()'
